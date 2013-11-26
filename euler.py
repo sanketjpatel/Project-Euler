@@ -16,3 +16,25 @@ def problem2():
         if (fnew%2 == 0):
             ans = ans + fnew
     return ans
+    
+def problem44():
+#I am solving this in order n^2 for now. If it doesn't work out, will change the algorithm
+#Giving a limit to the pentagonal chain, because I don't want the program to run forever.
+#Should remove it and use a while loop once you have a working solution.
+    p = []
+    counter = 1
+    i = 1
+    #print "Start"
+    while (counter):
+        p.append(i*(3*i - 1)/2)
+        for j in range(i-1):                        
+            y = p[i-1] - p[j]                        
+            if (((24*y + 1)**0.5)%6 == 5):
+                print i-1, j
+                x = p[i-1]+p[j]
+                if (((24*x + 1)**0.5)%6 == 5):
+                    print "Solution has been found!"
+                    counter = 0
+                    print i-1, j, p[i-1], p[j], x, y
+                    return y
+        i = i+1
