@@ -30,11 +30,12 @@ def problem44():
         for j in range(i-1):                        
             y = p[i-1] - p[j]                        
             if (((24*y + 1)**0.5)%6 == 5):
-                print i-1, j
+                #print i-1, j
                 x = p[i-1]+p[j]
                 if (((24*x + 1)**0.5)%6 == 5):
                     print "Solution has been found!"
                     counter = 0
                     print i-1, j, p[i-1], p[j], x, y
+                    print "Answer is ", y
                     return y
         i = i+1
