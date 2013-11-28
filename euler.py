@@ -39,3 +39,9 @@ def problem44():
                     print "Answer is ", y
                     return y
         i = i+1
+
+def problem147(x, y):
+    #straight = x*y*(x+1)*(y+1)/4
+    #diagonal = 
+    # 2, 4, 6, ... 2m-2, (2m-1, 2m-1, ... x(n-m)), 2m-2, ... 6, 4, 2
+    # px1 = (2m-1)*(m*(n-m+2)-2)
