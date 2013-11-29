@@ -16,6 +16,21 @@ def problem2():
         if (fnew%2 == 0):
             ans = ans + fnew
     return ans
+
+def problem3(x):
+    
+    def primefactors(n):
+    #Returns all the prime factors of a positive integer
+        factors = []
+        d = 2
+        while n > 1:
+            while n % d == 0:
+                factors.append(d)
+                n /= d
+            d = d + 1
+        return factors
+
+    return max(primefactors(x))
     
 def problem44():
 #I am solving this in order n^2 for now. If it doesn't work out, will change the algorithm
