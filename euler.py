@@ -40,8 +40,48 @@ def problem44():
                     return y
         i = i+1
 
-def problem147(x, y):
+
+
+#def diagonals(m, n):
+#    dummy1 = max(m,n)
+#    dummy2= min(m,n)
+#    n = dummy1
+#    m = dummy2
+#    total = 0
+#    
+#    for k in range(m+1, 0, -2):
+#        total = total + (k-1)*((2*k*(2*k-1)/3) - 3*k + 2 + (n-m)*(2*k - 3)) #pxodd    
+#    
+#    for k in range(m, 0, -2):
+#        total = total + (k-1)*((2*k*(2*k-1)/3) - 5*k + 6 + (n-m+1)*(2*k - 3)) #pxeven
+#    
+#    total = 2*total
+#    
+#    for k in range(m-1, 0, -2):
+#        total = total - 2*k*(k-1) - (n-m)*(2*k - 1)
+#    
+#    for k in range(m-2, 0, -2):
+#        total = total - 2*(k-1)*(k-1) - (n-m+1)*(2*k - 1)
+#                
+#    return total
+                
+def subrects(x, y):
+    dummy1 = min(x,y)
+    dummy2 = max(x,y)
+    x = dummy1
+    y = dummy2
+    #Found this closed form solution
+    total = ((3*(x**2) + 3*x )*(y**2) + (16*(x**3) + 3*(x**2) - x)*y - 8*(x**4) + 2*(x**2) - 6*x) / 12 
     #straight = x*y*(x+1)*(y+1)/4
-    #diagonal = 
-    # 2, 4, 6, ... 2m-2, (2m-1, 2m-1, ... x(n-m)), 2m-2, ... 6, 4, 2
-    # px1 = (2m-1)*(m*(n-m+2)-2)
+    #diagonal = diagonals(x,y)
+    #total = straight +diagonal
+    ## 2, 4, 6, ... 2m-2, (2m-1, 2m-1, ... x(n-m)), 2m-2, ... 6, 4, 2
+    ## px1 = (2m-1)*(m*(n-m+2)-2)
+    return total
+
+def problem147(x,y):
+    total = 0
+    for i in range(1, x+1):
+        for j in range(1, y+1):
+            total = total + subrects(i,j)
+    return total
