@@ -64,7 +64,9 @@ def problem44():
 #        total = total - 2*(k-1)*(k-1) - (n-m+1)*(2*k - 1)
 #                
 #    return total
-                
+
+
+#subrects returns the total number of sub-rectangles in a given rectangle of (x,y) dimension                
 def subrects(x, y):
     dummy1 = min(x,y)
     dummy2 = max(x,y)
